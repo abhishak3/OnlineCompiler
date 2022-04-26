@@ -1,5 +1,13 @@
-from . import main
+from flask import render_template, request
 
-@main.route('/')
+from . import main
+from .forms import CodeForm
+
+@main.route('/', methods=['GET','POST'])
 def home():
-    return "<h1> Working! </h1>"
+    form = CodeForm()
+    if request.method == 'POST':
+        if form.validate_on_submit():
+            language = form.language.data
+            script = form.script.data
+    return render_template("index.html", form=form)
