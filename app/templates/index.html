@@ -13,5 +13,8 @@
         {{ form.script() }}  <br>
         {{ form.submit() }}  <br>
     </form>
+    {% if output %}
+    <textarea>{{ output['output'] }}</textarea>
+    {% endif %}
 </body>
 </html>

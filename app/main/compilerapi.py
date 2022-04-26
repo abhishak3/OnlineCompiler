@@ -1,27 +1,20 @@
-import requests
-import json
+def process(language, script):
+    import requests
+    import json
+    import os
 
-with open('./compilerapi_creds.json', 'r') as f:
-    read_data = f.read()
-    payload = json.loads(read_data)
+    with open(os.path.join(".","app","main","compilerapi_creds.json"), 'r') as f:
+        read_data = f.read()
+        payload = json.loads(read_data)
 
-#language = input("Enter language: ")
-payload['language'] = "python3"
+    payload['language'] = language
+    payload['script'] = script
 
+    headers = {"Content-Type":"application/json; charset=UTF-8"}
+    submission_url = 'https://api.jdoodle.com/v1/execute'
 
-#filename = input("Enter filename: ")
-filename = "arr_test.py"
+    r = requests.post(submission_url,
+                      data = json.dumps(payload),
+                      headers = headers)
 
-with open(filename, 'r') as f:
-    read_data = f.read()
-    payload['script'] = read_data
-
-headers = {"Content-Type":"application/json; charset=UTF-8"}
-#headers = {"Content-Type":"application/json;"}
-submission_url = 'https://api.jdoodle.com/v1/execute'
-
-r = requests.post(submission_url,
-                  data = json.dumps(payload),
-                  headers = headers)
-
-print(r.json())
+    return r.json()
