@@ -15,5 +15,6 @@ def home():
             output = process(language, script)
             print(f"{language=}")
             print(f"{script=}")
-            print(output['output'])
+            print(f"{output=}")
+            output = output['output'] if 'output' in output else output['error']
     return render_template("index.html", form=form, output=output)
