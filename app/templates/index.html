@@ -5,16 +5,42 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Online Compiler</title>
+    <style type="text/css" screen="media">
+        #editor { 
+            width: 50em;
+        }
+    </style>
 </head>
 <body>
-    <form action="/" method="post">
+    <form action="/" method="post" onsubmit="submitthis()">
         {{ form.hidden_tag() }}
         {{ form.language() }}<br>
+        <div id="editor" class="scrollmargin"></div>
         {{ form.script() }}  <br>
         {{ form.submit() }}  <br>
     </form>
+
     {% if output %}
-    <textarea>{{ output }}</textarea>
+    <pre><code class="language-shell">{{ output }}</code></pre>
     {% endif %}
+
+    <!-- Ace Configs -->
+    <script src="../static/ace-builds/src/ace.js" type="text/javascript" charset="utf-8"></script>
+    <script>
+        var editor = ace.edit("editor",{
+            autoScrollEditorIntoView: true,
+            minLines: 20,
+            maxLines: 20,
+            fontSize: 14,
+            cursorStyle: "smooth"
+        });
+        editor.setTheme("ace/theme/monokai");
+        editor.session.setMode("ace/mode/python");
+
+        // event handler
+        function submitthis() {
+            document.getElementById("script").value = editor.getValue();
+        }
+    </script>
 </body>
 </html>

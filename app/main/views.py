@@ -16,5 +16,6 @@ def home():
             print(f"{language=}")
             print(f"{script=}")
             print(f"{output=}")
+            #print(f"{request.form['codescript']=}")
             output = output['output'] if 'output' in output else output['error']
     return render_template("index.html", form=form, output=output)
