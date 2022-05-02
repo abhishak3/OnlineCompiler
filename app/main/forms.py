@@ -9,7 +9,6 @@ class CodeForm(FlaskForm):
                                     ('python3', 'Python3'),
                                     ('php', 'PHP')],
                            validators=[DataRequired()])
-    script = TextAreaField(validators=[DataRequired()],
-                           render_kw={'hidden':'',
-                                      'contenteditable':''})
+    script = TextAreaField(#validators=[DataRequired()],
+                           render_kw={'hidden':''})
     submit = SubmitField()

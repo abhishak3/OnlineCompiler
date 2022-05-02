@@ -34,10 +34,9 @@
             fontSize: 14,
             cursorStyle: "smooth"
         });
-        editor.setTheme("ace/theme/monokai");
+        editor.setTheme("ace/theme/twilight");
         editor.session.setMode("ace/mode/python");
 
-        // event handler
         function submitthis() {
             document.getElementById("script").value = editor.getValue();
         }
