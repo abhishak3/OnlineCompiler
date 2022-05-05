@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms import TextAreaField, StringField, SubmitField, SelectField
+from wtforms import TextAreaField, SubmitField, SelectField
 from wtforms.validators import DataRequired
 
 class CodeForm(FlaskForm):
@@ -12,3 +12,4 @@ class CodeForm(FlaskForm):
     script = TextAreaField(#validators=[DataRequired()],
                            render_kw={'hidden':''})
     submit = SubmitField()
+

@@ -26,20 +26,6 @@
 
     <!-- Ace Configs -->
     <script src="../static/ace-builds/src/ace.js" type="text/javascript" charset="utf-8"></script>
-    <script>
-        var editor = ace.edit("editor",{
-            autoScrollEditorIntoView: true,
-            minLines: 20,
-            maxLines: 20,
-            fontSize: 14,
-            cursorStyle: "smooth"
-        });
-        editor.setTheme("ace/theme/twilight");
-        editor.session.setMode("ace/mode/python");
-
-        function submitthis() {
-            document.getElementById("script").value = editor.getValue();
-        }
-    </script>
+    <script src="../static/js/ace_editor.js"></script>
 </body>
 </html>
