@@ -12,7 +12,7 @@
     </style>
 </head>
 <body>
-    <form action="/" method="post" onsubmit="submitthis()">
+    <form id="scriptForm" action="/api">
         {{ form.hidden_tag() }}
         {{ form.language() }}<br>
         <div id="editor" class="scrollmargin"></div>
@@ -20,12 +20,18 @@
         {{ form.submit() }}  <br>
     </form>
 
+    <pre><code id="output" class="language-shell"></code></pre>
     {% if output %}
-    <pre><code class="language-shell">{{ output }}</code></pre>
+    <pre><code id="output" class="language-shell">{{ output }}</code></pre>
     {% endif %}
+
+    <!-- Jquery -->
+    <script src="../static/js/jquery-3.6.0.min.js" type = "text/javascript" charset="utf-8"></script>
 
     <!-- Ace Configs -->
     <script src="../static/ace-builds/src/ace.js" type="text/javascript" charset="utf-8"></script>
-    <script src="../static/js/ace_editor.js"></script>
+    <script src="../static/js/ace_editor.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../static/js/process_request.js"></script>
 </body>
 </html>
+

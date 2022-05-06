@@ -24,8 +24,3 @@ select_language.addEventListener("change", () => {
 editor.session.setMode(`ace/mode/${languages[select_language.value]}`);
 editor.setTheme("ace/theme/twilight");
 
-// Getting editor value in input field
-function submitthis() {
-    document.getElementById("script").value = editor.getValue();
-}
-

@@ -1,4 +1,4 @@
-from flask import render_template, request
+from flask import render_template, request, jsonify
 
 from . import main
 from .forms import CodeForm
@@ -20,3 +20,10 @@ def home():
             output = output['output'] if 'output' in output else output['error']
     return render_template("index.html", form=form, output=output)
 
+@main.route('/api', methods=['GET','POST'])
+def api():
+    data = request.get_json(force=True)
+    language = data.get('language', 'cpp')
+    script = data.get('script', '')
+    output = process(language, script)
+    return jsonify(output)
