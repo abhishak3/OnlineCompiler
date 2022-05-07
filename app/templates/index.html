@@ -13,22 +13,24 @@
 </head>
 <body>
     <form id="scriptForm" action="/api">
-        {{ form.hidden_tag() }}
-        {{ form.language() }}<br>
+        <select name="language" id="language">
+            <option value="python3">Python3</option>
+            <option value="cpp">C++</option>
+        </select>
+
         <select name="theme" id="theme">
             <option value="one_dark">One Dark</option>
             <option value="terminal">Terminal</option>
             <option value="solarized_light">Solarized Light</option>
             <option value="gruvbox">Gruvbox</option>
         </select>
-        <div id="editor" class="scrollmargin"></div>
-        {{ form.submit() }}  <br>
+
+        <div id="editor" class="scrollmargin"></div><br>
+
+        <input type="submit" value="Submit" name="submit" id="submit">
     </form>
 
     <pre><code id="output" class="language-shell"></code></pre>
-    {% if output %}
-    <pre><code id="output" class="language-shell">{{ output }}</code></pre>
-    {% endif %}
 
     <!-- Jquery -->
     <script src="../static/js/jquery-3.6.0.min.js" type = "text/javascript" charset="utf-8"></script>
