@@ -1,7 +1,15 @@
 // mappings from api-lang-name to ace-lang-name
 let languages = {
     "python3": "python",
-    "cpp": "c_cpp"
+    "java": "java",
+    "cpp": "c_cpp",
+    "cpp14": "c_cpp",
+    "cpp17": "c_cpp",
+    "csharp": "csharp",
+    "sql": "mysql",
+    "perl": "perl",
+    "go": "golang",
+    "bash": "batchfile"
 }
 
 // Ace Editor Configs
