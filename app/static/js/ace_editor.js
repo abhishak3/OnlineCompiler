@@ -13,21 +13,24 @@ var editor = ace.edit("editor", {
     cursorStyle: "smooth"
 });
 
-// changing language mode of editor
-let select_language = document.getElementById("language");
-select_language.addEventListener("change", () => {
-    let lang = languages[select_language.value];
-    editor.session.setMode(`ace/mode/${lang}`);
-});
-
-// changing editor theme
-let select_theme = document.getElementById("theme");
-select_theme.addEventListener("change", () => {
-    let theme = select_theme.value;
-    editor.setTheme(`ace/theme/${theme}`);
-})
-
 // intial configs
+let select_language = document.getElementById("language");
+let select_theme = document.getElementById("theme");
 editor.session.setMode(`ace/mode/${languages[select_language.value]}`);
 editor.setTheme(`ace/theme/${select_theme.value}`);
+
+// jquery
+$(function() {
+    // changing language mode of editor
+    $("#language").on("change", function() {
+        let lang = languages[$(this).val()];
+        editor.session.setMode(`ace/mode/${lang}`);
+    })
+
+    // changing editor theme
+    $("#theme").on("change", function() {
+        let theme = $(this).val();
+        editor.setTheme(`ace/theme/${theme}`);
+    })
+})
 
