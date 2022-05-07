@@ -15,8 +15,13 @@
     <form id="scriptForm" action="/api">
         {{ form.hidden_tag() }}
         {{ form.language() }}<br>
+        <select name="theme" id="theme">
+            <option value="one_dark">One Dark</option>
+            <option value="terminal">Terminal</option>
+            <option value="solarized_light">Solarized Light</option>
+            <option value="gruvbox">Gruvbox</option>
+        </select>
         <div id="editor" class="scrollmargin"></div>
-        {{ form.script() }}  <br>
         {{ form.submit() }}  <br>
     </form>
 
@@ -28,10 +33,12 @@
     <!-- Jquery -->
     <script src="../static/js/jquery-3.6.0.min.js" type = "text/javascript" charset="utf-8"></script>
 
+    <!-- Processing Request -->
+    <script src="../static/js/process_request.js"></script>
+
     <!-- Ace Configs -->
     <script src="../static/ace-builds/src/ace.js" type="text/javascript" charset="utf-8"></script>
     <script src="../static/js/ace_editor.js" type="text/javascript" charset="utf-8"></script>
-    <script src="../static/js/process_request.js"></script>
 </body>
 </html>
 
