@@ -5,42 +5,47 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Online Compiler</title>
-    <style type="text/css" screen="media">
-        #editor { 
-            width: 50em;
-        }
-    </style>
+    <link rel="stylesheet" href="../static/css/style.css">
 </head>
 <body>
-    <form id="scriptForm" action="/api">
-        <select name="language" id="language">
-            <option value="python3">Python3</option>
-            <option value="java">Java</option>
-            <option value="c">C</option>
-            <option value="cpp">C++</option>
-            <option value="cpp14">C++ 14</option>
-            <option value="cpp17">C++ 17</option>
-            <option value="csharp">C#</option>
-            <option value="bash">Bash</option>
-            <option value="perl">Perl</option>
-            <option value="go">Go</option>
-            <option value="sql">SQL</option>
-        </select>
+    <header id="website-header">
+        <h1 id="website-header-name">Shaker</h1>
+        <h4 id="website-header-tag">The only compiler you'll ever need.</h4>
+    </header>
+    <main>
+        <form id="scriptForm" action="/api">
+            <div class="container">
+                <div class="ide-container">
+                    <select name="language" id="language">
+                        <option value="python3">Python3</option>
+                        <option value="java">Java</option>
+                        <option value="c">C</option>
+                        <option value="cpp">C++</option>
+                        <option value="cpp14">C++ 14</option>
+                        <option value="cpp17">C++ 17</option>
+                        <option value="csharp">C#</option>
+                        <option value="bash">Bash</option>
+                        <option value="perl">Perl</option>
+                        <option value="go">Go</option>
+                        <option value="sql">SQL</option>
+                    </select>
 
-        <select name="theme" id="theme">
-            <option value="one_dark">One Dark</option>
-            <option value="terminal">Terminal</option>
-            <option value="solarized_light">Solarized Light</option>
-            <option value="gruvbox">Gruvbox :)</option>
-            <option value="cobalt">CodeTantra :(</option>
-        </select>
-
-        <div id="editor" class="scrollmargin"></div><br>
-
-        <input type="submit" value="Submit" name="submit" id="submit">
-    </form>
-
-    <pre><code id="output" class="language-shell"></code></pre>
+                    <select name="theme" id="theme">
+                        <option value="one_dark">One Dark</option>
+                        <option value="terminal">Terminal</option>
+                        <option value="solarized_light">Solarized Light</option>
+                        <option value="gruvbox">Gruvbox :)</option>
+                        <option value="cobalt">CodeTantra :(</option>
+                    </select>
+                    <input type="submit" value="Run" name="submit" id="submit">
+                    <div id="editor" class="scrollmargin"></div><br>
+                </div>
+                <div class="output-container">
+                    <pre><div id="output" class="language-shell"></div></pre>
+                </div>
+            </div>
+        </form>
+    </main>
 
     <!-- Jquery -->
     <script src="../static/js/jquery-3.6.0.min.js" type = "text/javascript" charset="utf-8"></script>

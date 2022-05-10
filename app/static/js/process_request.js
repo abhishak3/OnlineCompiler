@@ -3,6 +3,8 @@ $(document).ready(function() {
     $("#scriptForm").on('submit', function(e) {
         e.preventDefault(); //prevent default form action
 
+        $("#output").html("<span id='loading'>loading...</span>");
+
         let language = $("#scriptForm select[name=language]").val();
         let script = editor.getValue();
 

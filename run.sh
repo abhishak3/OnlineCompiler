@@ -1,5 +1,5 @@
 #!/bin/bash
-pipenv install
+python3 -m pipenv install
 export FLASK_APP=manage.py
 export FLASK_DEBUG=1
-flask run
+python3 -m flask run

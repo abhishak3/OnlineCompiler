@@ -15,8 +15,8 @@ let languages = {
 // Ace Editor Configs
 var editor = ace.edit("editor", {
     autoScrollEditorIntoView: true,
-    minLines: 20,
-    maxLines: 20,
+    minLines: 40,
+    maxLines: 40,
     fontSize: 14,
     cursorStyle: "smooth"
 });
