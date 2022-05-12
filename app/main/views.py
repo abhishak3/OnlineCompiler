@@ -14,3 +14,4 @@ def api():
     script = data.get('script', '')
     output = process(language, script)
     return jsonify(output)
+
