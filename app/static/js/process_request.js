@@ -4,7 +4,13 @@ $(document).ready(function() {
         e.preventDefault(); //prevent default form action
 
         // loading text
-        $("#output").html("<span id='loading'>loading...</span>");
+        var count = 0;
+        var loading = setInterval(function() {
+            let n = (count % 3) + 1;
+            let loading_text = "loading" + ".".repeat(n);
+            $("#output").html(`<span id='loading'>${loading_text}</span>`);
+            count++;
+        }, 500);
 
         // form data
         let language = $("#scriptForm select[name=language]").val();
@@ -18,6 +24,7 @@ $(document).ready(function() {
             url: actionURL,
             data: JSON.stringify({ language: language, script: script }),
             success: (res_data, status) => {    // if successful
+                clearInterval(loading);
                 let output = `${res_data["output"]}<br>`+
                     `<span id="additional_info">CpuTime: ${res_data["cpuTime"]} | `+
                     `Memory: ${res_data["memory"]}</span><br>`
