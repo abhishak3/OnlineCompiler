@@ -9,13 +9,13 @@
 </head>
 <body>
     <header id="website-header">
-        <h1 id="website-header-name">Shaker</h1>
-        <h4 id="website-header-tag">The only compiler you'll ever need.</h4>
+        <h1 id="website-header-name">>_ Shaker</h1>
+        <h3 id="website-header-tag">Shake your code here before use!</h3>
     </header>
     <main>
         <form id="scriptForm" action="/api">
             <div class="container">
-                <div class="ide-container">
+                <div class="ide-options">
                     <select name="language" id="language">
                         <option value="python3">Python3</option>
                         <option value="java">Java</option>
@@ -38,7 +38,10 @@
                         <option value="cobalt">CodeTantra :(</option>
                     </select>
                     <input type="submit" value="Run" name="submit" id="submit">
-                    <div id="editor" class="scrollmargin"></div><br>
+                </div>
+                <div id="output-title"><span id="output-text">Output</span></div>
+                <div class="ide-container">
+                    <div id="editor"></div>
                 </div>
                 <div class="output-container">
                     <pre><div id="output" class="language-shell"></div></pre>

@@ -1,22 +1,29 @@
 body {
     background-color: #292633;
+    font-family: sans-serif;
 }
 
-h1 {
-    font-size: 2em;
+h1, h3 {
+    margin: 0;
+    padding: 0;
 }
 
 .container {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    grid-template-rows: 100vh;
+    grid-template-rows: 30px 85vh;
     grid-column-gap: 1em;
+    grid-row-gap: 1em;
+}
+
+.ide-options {
+    display:flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
 }
 
 .ide-container {
-    display: flex;
-    flex-wrap: wrap;
-    align-content: flex-start;
+    border: 2px solid #167a4f;
 }
 
 .output-container {
@@ -27,17 +34,27 @@ h1 {
     font-size: 1.5em;
 }
 
-#website-header{
+#output-text {
+    color: #15ef70;
+}
+
+#output-title {
+    color: white;
+    text-align: center;
+    font-size: 1.3em;
+}
+
+#website-header {
     color: white;
     font-family: monospace;
+    font-size: 1.3em;
     text-align: center;
-    margin: 0.5em;
+    margin-bottom: 2em;
 }
 
 #editor {
     margin-top: 10px;
     width: 100%;
-    border: 2px solid #167a4f;
 }
 
 #loading {
@@ -50,7 +67,7 @@ h1 {
     border: 0;
     border-radius: 50px;
     margin: 0px 5px;
-    padding: 2px 5px;
+    padding: 5px 5px;
 }
 
 #additional_info {
