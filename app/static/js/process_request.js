@@ -8,7 +8,7 @@ $(document).ready(function() {
         var loading = setInterval(function() {
             let n = (count % 3) + 1;
             let loading_text = "shaking" + ".".repeat(n);
-            $("#output").html(`<span id='loading'>${loading_text}</span>`);
+            $("#output").html(`<span style="color:gray;">${loading_text}</span>`);
             count++;
         }, 500);
 
