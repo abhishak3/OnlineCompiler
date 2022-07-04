@@ -1,1 +1,1 @@
-web: source run.sh
+web: gunicorn manage:app
