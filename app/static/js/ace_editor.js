@@ -12,21 +12,21 @@ let languages = {
   "bash": "batchfile"
 }
 
+// initial configs
+let select_language = document.getElementById("language");
+let select_theme = document.getElementById("theme");
+
 // Ace Editor Configs
 var editor = ace.edit("editor", {
   highlightActiveLine: true,
   autoScrollEditorIntoView: true,
-  minLines: 39,
-  maxLines: 39,
+  minLines: 37,
+  maxLines: 37,
   fontSize: 18,
-  cursorStyle: "smooth"
+  cursorStyle: "smooth",
+  mode: `ace/mode/${languages[select_language.value]}`,
+  theme: `ace/theme/${select_theme.value}`
 });
-
-// intial configs
-let select_language = document.getElementById("language");
-let select_theme = document.getElementById("theme");
-editor.session.setMode(`ace/mode/${languages[select_language.value]}`);
-editor.setTheme(`ace/theme/${select_theme.value}`);
 
 // jquery
 $(function() {
@@ -41,5 +41,9 @@ $(function() {
     let theme = $(this).val();
     editor.setTheme(`ace/theme/${theme}`);
   })
+
+  $(window).resize(function() {
+    editor.resize();
+  });
 })
 
