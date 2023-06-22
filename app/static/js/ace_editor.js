@@ -18,7 +18,7 @@ var editor = ace.edit("editor", {
   autoScrollEditorIntoView: true,
   minLines: 39,
   maxLines: 39,
-  fontSize: 14,
+  fontSize: 18,
   cursorStyle: "smooth"
 });
 
