@@ -20,6 +20,9 @@ let select_theme = document.getElementById("theme");
 var editor = ace.edit("editor", {
   highlightActiveLine: true,
   autoScrollEditorIntoView: true,
+  displayIndentGuides: true,
+  highlightIndentGuides: true,
+  showPrintMargin: false,
   minLines: 37,
   maxLines: 37,
   fontSize: 18,
